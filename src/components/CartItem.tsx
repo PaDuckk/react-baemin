@@ -5,7 +5,7 @@ import { formatCurrency } from '../util/formatCurrency'
 import Counter from './Counter'
 import { CloseIcon } from '@chakra-ui/icons'
 import { useDispatch } from 'react-redux'
-import { decreaseMenuCount, increaseMenuCount } from '../store/cartSlice'
+import { decreaseMenuCount, deleteMenu, increaseMenuCount } from '../store/cartSlice'
 
 type Props = {
   menu: Menu
@@ -21,7 +21,7 @@ const CartItem = ({ menu }: Props) => {
         <div className="price">{formatCurrency(menu.price)}</div>
       </div>
       <div className="right">
-        <div className="remove-btn-wrapper" onClick={() => dispatch(decreaseMenuCount(menu.id))}>
+        <div className="remove-btn-wrapper" onClick={() => dispatch(deleteMenu(menu.id))}>
           <CloseIcon w="15px" h="15px" color="gray.500" />
         </div>
         <Counter

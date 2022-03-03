@@ -90,6 +90,7 @@ export const {
   removeDiscount,
   addDiscountExcludeId,
   removeDiscountExcludeId,
+  deleteMenu,
 } = cartSlice.actions
 
 export default cartSlice.reducer
