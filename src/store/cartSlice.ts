@@ -107,7 +107,7 @@ export const getTotalPrice = createSelector(selectMenus, selectDiscounts, (menus
         if (discount.exclude_item_ids[menu.id]) {
           return acc
         } else {
-          return sum * (discount.discount_rate / 100)
+          return acc + sum * (discount.discount_rate / 100)
         }
       }, 0)
 
