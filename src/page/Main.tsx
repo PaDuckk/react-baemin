@@ -2,6 +2,7 @@ import { Badge } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 import Card from '../components/Card'
 import MenuList from '../components/MenuList'
 import Page from '../components/Page'
@@ -13,13 +14,14 @@ type Props = {}
 const Main = (props: Props) => {
   const menus = useSelector<ReduxState, Menu[]>((state) => state.app.items)
   const menusInCart = useSelector<ReduxState, Menu[]>((state) => state.cart.items)
+  const navigate = useNavigate()
 
   return (
     <PageWrapper>
       <Card>
         <div className="header">
           <h1>오모가리 김치찌개</h1>
-          <div className="cart">
+          <div className="cart" onClick={() => navigate('/cart')}>
             Cart <Badge colorScheme="facebook">{menusInCart.reduce((acc, curr) => acc + curr.count, 0)}</Badge>
           </div>
         </div>
@@ -34,8 +36,6 @@ const Main = (props: Props) => {
 export default Main
 
 const PageWrapper = styled(Page)`
-  position: relative;
-
   .header {
     display: flex;
     justify-content: space-between;
