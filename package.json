@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "BUILD_PATH='./docs' GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "PUBLIC_URL=/react-baemin/ BUILD_PATH='./docs' GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
