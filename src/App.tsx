@@ -12,6 +12,8 @@ function App() {
     dispatch(fetchMerchantInfo())
   }, [])
 
+  console.log('basename')
+
   return (
     <Router basename="/react-baemin">
       <Routes>
