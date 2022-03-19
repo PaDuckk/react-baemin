@@ -7,12 +7,13 @@ import { fetchMerchantInfo } from './store/appSlice'
 
 function App() {
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(fetchMerchantInfo())
-    console.log('?')
   }, [])
+
   return (
-    <Router>
+    <Router basename="/react-baemin">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/cart" element={<Cart />} />
